@@ -38,7 +38,7 @@ function fetchPokemonDetails(pokemonData) {
             .then(res => res.json())
             .then(resJSON => ({
                 id: resJSON.id,
-                name: resJSON.name,
+                name: resJSON.name.replace('-', ' '),
                 weight: resJSON.weight,
                 height: resJSON.height,
                 types: resJSON.types.map(typeInfo => typeInfo.type.name).join(', '),
