@@ -1,0 +1,39 @@
+# Node modules - dependencies folder, should not be versioned
+node_modules/
+
+# Cypress - ignore screenshots and videos generated during testing
+cypress/screenshots/
+cypress/videos/
+
+# Ignore Cypress cache and configuration if you don't want to share them
+.cypress-cache/
+cypress.config.js
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE Directories
+.idea/
+.vscode/
+
+# Build outputs, if applicable
+dist/
+build/
+
+# Ignore audio, img folders if they contain generated or temporary files
+audio/
+img/
+
+# Coverage reports, if generated during tests
+coverage/
+.nyc_output/
+
+# Environment configuration files, adjust if you have sensitive data
+.env
+.env.local
+.env.*.local
