@@ -1,6 +1,7 @@
 const API_BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 const $pokemonContainer = document.querySelector('#pokemon-container');
 const $loadingMessage = document.querySelector('#loading-message');
+const $searchBar = document.querySelector('#search-bar');
 const LIMIT = 20;
 let pokemonData = [];
 let offset = 0;
@@ -83,7 +84,6 @@ function createPokemonCards(pokemonData) {
     });
 }
 
-
 function showLoadingMessage(isVisible) {
     $loadingMessage.classList.toggle('hidden', !isVisible);
 }
@@ -92,6 +92,21 @@ window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !isFetching) {
         fetchPokemons();
     }
+});
+
+$searchBar.addEventListener('input', (event) => {
+    let $pokemonNames = document.querySelectorAll('.pokemon-name-and-id');
+
+    $pokemonNames.forEach((pokemonName) => {
+        let pokemonNameValue = pokemonName.textContent.toLowerCase();
+        let pokemonCard = pokemonName.parentElement.parentElement;
+
+        if (!pokemonNameValue.includes($searchBar.value.toLowerCase())) {
+            pokemonCard.style.display = 'none';
+        } else {
+            pokemonCard.style.display = 'block';
+        }
+    });
 });
 
 fetchPokemons();
