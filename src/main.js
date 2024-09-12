@@ -60,7 +60,7 @@ function createPokemonCards(pokemonData) {
         const inches = Math.round((heightInFeet - feet) * 12);
 
         const cardHTML = `
-            <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl pokemon-card">
                 <div class="bg-gray-100 p-4 flex items-center justify-center">
                     <img src="${pokemon.img_url}" alt="${pokemon.name} image" class="w-32 h-32 object-contain" />
                 </div>

@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cypress": "^13.14.2",
     "http-server": "^14.1.1"
   }
 }
