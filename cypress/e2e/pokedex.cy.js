@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 describe('pokédex', () => {
   beforeEach('visit page', () => {
     cy.visit('ignaciomercado4.github.io/pokedex/');
@@ -46,6 +47,30 @@ describe('pokédex', () => {
     });
     cy.wait(600);
     cy.get('.pokemon-card').should('exist').and('have.length.above', 39);
+  });
 
+  it('should display correct pokemon data after loading more pokémon', () => {
+    cy.wait(600);
+    cy.get('.pokemon-card').should('exist').and('have.length.above', 19);
+
+    cy.scrollTo('bottom');
+    cy.wait(600);
+    cy.get('.pokemon-card').eq(20).should('exist');
+
+    cy.get('.pokemon-name-and-id').eq(20).invoke('text').then(text => {
+      expect(text.trim()).to.equal('Spearow #21');
+    });
+
+    cy.get('.pokemon-height').eq(20).invoke('text').then(text => {
+      expect(text.trim()).to.equal('Height: 0.3 mts / 0ft 12in');
+    });
+
+    cy.get('.pokemon-weight').eq(20).invoke('text').then(text => {
+      expect(text.trim()).to.equal('Weight: 2.0 kg / 4.4 lbs');
+    });
+
+    cy.get('.pokemon-type').eq(20).invoke('text').then(text => {
+      expect(text.trim()).to.equal('Type(s): normal, flying');
+    });
   });
 });
