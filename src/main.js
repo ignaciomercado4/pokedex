@@ -65,16 +65,16 @@ function createPokemonCards(pokemonData) {
                     <img src="${pokemon.img_url}" alt="${pokemon.name} image" class="w-32 h-32 object-contain" />
                 </div>
                 <div class="p-4">
-                    <h2 class="text-lg font-bold text-gray-800 capitalize mb-2">
+                    <h2 class="text-lg font-bold text-gray-800 capitalize mb-2 pokemon-name-and-id">
                         ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} #${pokemon.id}
                     </h2>
-                    <p class="text-sm text-gray-600 mb-1">
+                    <p class="text-sm text-gray-600 mb-1 pokemon-height">
                         <strong>Height:</strong> ${pokemon.height / 10} mts / ${feet}ft ${inches}in
                     </p>
-                    <p class="text-sm text-gray-600 mb-1">
+                    <p class="text-sm text-gray-600 mb-1 pokemon-weight">
                         <strong>Weight:</strong> ${(pokemon.weight / 10).toFixed(1)} kg / ${((pokemon.weight / 10) * 2.20).toFixed(1)} lbs 
                     </p>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 pokemon-type">
                         <strong>Type(s):</strong> ${pokemon.types}
                     </p>
                 </div>
