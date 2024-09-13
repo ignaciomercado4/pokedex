@@ -76,7 +76,7 @@ function createPokemonCards(pokemonData) {
                         <strong>Weight:</strong> ${(pokemon.weight / 10).toFixed(1)} kg / ${((pokemon.weight / 10) * 2.20).toFixed(1)} lbs 
                     </p>
                     <p class="text-sm text-gray-600 pokemon-type">
-                        <strong>Type(s):</strong> ${pokemon.types}
+                        <strong>Type(s):</strong> ${pokemon.types[0].toUpperCase() + pokemon.types.substring(1)}
                     </p>
                 </div>
             </div>`;
