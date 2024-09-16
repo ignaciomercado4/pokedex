@@ -1,7 +1,7 @@
 import {
     showLoadingMessage,
     createPokemonCards
-} from './ui.js'
+} from '../ui/ui.js'
 
 let pokemonData = [];
 let offset = 0;

@@ -1,4 +1,4 @@
-import { fetchPokemons } from "./services.js";
+import { fetchPokemons } from "../services/services.js";
 
 const $loadingMessage = document.querySelector('#loading-message');
 const $pokemonContainer = document.querySelector('#pokemon-container');

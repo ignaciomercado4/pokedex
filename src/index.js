@@ -1,5 +1,5 @@
-import { fetchPokemons } from './services.js';
-import { addEvents } from './ui.js';
+import { fetchPokemons } from './services/services.js';
+import { addEvents } from './ui/ui.js';
 
 fetchPokemons();
 addEvents();
